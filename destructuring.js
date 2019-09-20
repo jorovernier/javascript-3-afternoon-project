@@ -21,7 +21,7 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+let {color,make,model,year} = carDetails
 
 
 
@@ -34,7 +34,7 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+  let {firstName,lastName,title} = obj
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -53,9 +53,17 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+function totalPopulation(states) {
+  let {utah,california,texas,arizona} = states
+  return utah + california + texas + arizona
+}
 
-
+totalPopulation(states = {
+  utah: 4,
+  california: 4,
+  texas: 4,
+  arizona: 4
+})
 
 ////////// PROBLEM 4 //////////
 
@@ -67,8 +75,16 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+function ingredients(food){
+  let {carb,fat,protein} = food
+  return [carb,fat,protein]
+}
 
+ingredients(food = {
+  carb: 'ohydrates',
+  fat: 'lipose',
+  protein: 'amino acid'
+})
 
 
 ////////// PROBLEM 5 //////////
@@ -85,8 +101,22 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
+function largeNumbers(numbers){
+  let {first,second,third} = numbers
+  if (first < second && third) {
+    return first
+  } else if (second < first && third) {
+    return second
+  } else if (third < first && second) {
+    return third
+  }
+}
 
+largeNumbers(numbers = {
+  first:1,
+  second:2,
+  third:3
+})
 
 
 ////////// PROBLEM 6 //////////
@@ -97,6 +127,19 @@ function greeting( obj ) {
   Find the longest array and return that array.
 */
 
-//Code Here
+function numberGroups(arrays) {
+  let {a,b,c} = arrays
+        if (a.length > b.length && a.length > c.length) {
+    return arrays.a
+  } else if (b.length > a.length && b.length > c.length) {
+    return arrays.b
+  } else if (c.length > a.length && c.length > b.length) {
+    return arrays.c
+  }
+}
 
-
+numberGroups(arrays = {
+  a: [1,2,3,4],
+  b: [1,2],
+  c: [1,2,3]
+})
